@@ -74,7 +74,7 @@ export default function TeamComparison() {
         <div className="flex justify-center mb-6">
           <Select value={selectedPosition} onValueChange={setSelectedPosition}>
             <SelectTrigger className="w-[200px]">
-              <SelectValue placeholder="Select position" />
+              <SelectValue placeholder="Select Teams" />
             </SelectTrigger>
             <SelectContent>
               {leagues.map((league) => (
