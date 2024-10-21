@@ -9,12 +9,12 @@ const players = [
     image: "/placeholder.svg?height=400&width=400",
     team: "Players team",
     stats: {
-      games: 1492,
-      ptsPerGame: 27.1,
-      rebPerGame: 7.5,
-      astPerGame: 7.4,
-      fgPercentage: 50.6,
-      championships: 4,
+      passes: 86,
+      fwdPass: 76.4,
+      progPasses: 2.7,
+      defActions: 54.7,
+      duel: 81.2,
+      aerial: 29.8,
     },
   },
   {
@@ -22,24 +22,24 @@ const players = [
     image: "/placeholder.svg?height=400&width=400",
     team: "Players team",
     stats: {
-      games: 792,
-      ptsPerGame: 23.4,
-      rebPerGame: 9.8,
-      astPerGame: 4.9,
-      fgPercentage: 54.5,
-      championships: 1,
+      passes: 19.3,
+      fwdPass: 48.5,
+      progPasses: 59.8,
+      defActions: 62.7,
+      duel: 65.1,
+      aerial: 81.8,
     },
   },
 ];
 
 export default function PlayerComparison() {
   const maxStats = {
-    games: Math.max(...players.map((p) => p.stats.games)),
-    ptsPerGame: Math.max(...players.map((p) => p.stats.ptsPerGame)),
-    rebPerGame: Math.max(...players.map((p) => p.stats.rebPerGame)),
-    astPerGame: Math.max(...players.map((p) => p.stats.astPerGame)),
-    fgPercentage: Math.max(...players.map((p) => p.stats.fgPercentage)),
-    championships: Math.max(...players.map((p) => p.stats.championships)),
+    games: Math.max(...players.map((p) => p.stats.passes)),
+    ptsPerGame: Math.max(...players.map((p) => p.stats.fwdPass)),
+    rebPerGame: Math.max(...players.map((p) => p.stats.progPasses)),
+    astPerGame: Math.max(...players.map((p) => p.stats.defActions)),
+    fgPercentage: Math.max(...players.map((p) => p.stats.duel)),
+    championships: Math.max(...players.map((p) => p.stats.aerial)),
   };
 
   return (
@@ -71,32 +71,32 @@ export default function PlayerComparison() {
                 <div className="space-y-4">
                   <StatBar
                     label="Games Played"
-                    value={player.stats.games}
+                    value={player.stats.passes}
                     max={maxStats.games}
                   />
                   <StatBar
                     label="Points per Game"
-                    value={player.stats.ptsPerGame}
+                    value={player.stats.fwdPass}
                     max={maxStats.ptsPerGame}
                   />
                   <StatBar
                     label="Rebounds per Game"
-                    value={player.stats.rebPerGame}
+                    value={player.stats.progPasses}
                     max={maxStats.rebPerGame}
                   />
                   <StatBar
                     label="Assists per Game"
-                    value={player.stats.astPerGame}
+                    value={player.stats.defActions}
                     max={maxStats.astPerGame}
                   />
                   <StatBar
                     label="FG%"
-                    value={player.stats.fgPercentage}
+                    value={player.stats.duel}
                     max={maxStats.fgPercentage}
                   />
                   <StatBar
                     label="Championships"
-                    value={player.stats.championships}
+                    value={player.stats.aerial}
                     max={maxStats.championships}
                   />
                 </div>
