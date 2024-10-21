@@ -25,7 +25,7 @@ export const NavbarUI = ({
           href="/"
           className="  mx-8 py-4 text-3xl font-extrabold text-sky-950"
         >
-          SS
+          H2HFootball
         </Link>
       </div>
       <div
