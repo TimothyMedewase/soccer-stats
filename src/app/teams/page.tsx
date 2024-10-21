@@ -1,3 +1,8 @@
+import React from "react";
+
+const page = () => {
+  return <div>Teams page</div>;
+};
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
@@ -5,9 +10,9 @@ import { Navbar } from "@/components/navbar";
 
 const players = [
   {
-    name: "Team1/ Player1",
+    name: "Cristiano Ronaldo",
     image: "/placeholder.svg?height=400&width=400",
-    team: "Players team",
+    team: "Al Nassr",
     stats: {
       games: 1492,
       ptsPerGame: 27.1,
@@ -18,9 +23,9 @@ const players = [
     },
   },
   {
-    name: "Team2/ Player2",
+    name: "Lionel Messi",
     image: "/placeholder.svg?height=400&width=400",
-    team: "Players team",
+    team: "Inter Miami",
     stats: {
       games: 792,
       ptsPerGame: 23.4,
@@ -32,7 +37,7 @@ const players = [
   },
 ];
 
-export default function PlayerComparison() {
+export default function TeamComparison() {
   const maxStats = {
     games: Math.max(...players.map((p) => p.stats.games)),
     ptsPerGame: Math.max(...players.map((p) => p.stats.ptsPerGame)),
@@ -46,7 +51,7 @@ export default function PlayerComparison() {
     <div>
       <Navbar />
       <div className="container mx-auto p-4 overflow-x-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Soccer Stats</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">Compare Teams</h1>
         <div className="grid grid-cols-2 gap-8 min-w-[640px]">
           {players.map((player) => (
             <Card key={player.name} className="overflow-hidden">
