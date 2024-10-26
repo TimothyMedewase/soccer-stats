@@ -46,7 +46,6 @@ export default function PlayerComparison() {
     <div>
       <Navbar />
       <div className="container mx-auto p-4 overflow-x-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Soccer Stats</h1>
         <div className="grid grid-cols-2 gap-8 min-w-[640px]">
           {players.map((player) => (
             <Card key={player.name} className="overflow-hidden">
@@ -70,32 +69,32 @@ export default function PlayerComparison() {
               <CardContent className="mt-4">
                 <div className="space-y-4">
                   <StatBar
-                    label="Games Played"
+                    label="Passes"
                     value={player.stats.passes}
                     max={maxStats.games}
                   />
                   <StatBar
-                    label="Points per Game"
+                    label="Forward Pass %"
                     value={player.stats.fwdPass}
                     max={maxStats.ptsPerGame}
                   />
                   <StatBar
-                    label="Rebounds per Game"
+                    label="Progressive Passes"
                     value={player.stats.progPasses}
                     max={maxStats.rebPerGame}
                   />
                   <StatBar
-                    label="Assists per Game"
+                    label="Defensive Actions"
                     value={player.stats.defActions}
                     max={maxStats.astPerGame}
                   />
                   <StatBar
-                    label="FG%"
+                    label="Duel %"
                     value={player.stats.duel}
                     max={maxStats.fgPercentage}
                   />
                   <StatBar
-                    label="Championships"
+                    label="Aerial %"
                     value={player.stats.aerial}
                     max={maxStats.championships}
                   />

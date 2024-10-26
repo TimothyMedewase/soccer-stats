@@ -38,7 +38,6 @@ export default function TeamComparison() {
     <div>
       <Navbar />
       <div className="container mx-auto p-4 overflow-x-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Compare Teams</h1>
         <div className="flex flex-row justify-center space-x-12">
           <div className="flex justify-center mb-6">
             <Select value={selectedLeague} onValueChange={setSelectedLeague}>
