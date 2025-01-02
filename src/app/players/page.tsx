@@ -30,7 +30,7 @@ export default function PlayerComparison() {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-4 overflow-x-auto">
+      <div className="min-h-screen flex flex-col my-4">
         <div className="flex flex-row justify-center space-x-12">
           <div className="flex justify-center mb-6">
             <Select
@@ -64,7 +64,7 @@ export default function PlayerComparison() {
             </Select>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 min-w-[640px] mb-8">
+        <div className="grid grid-cols-2 gap-8 min-w-[640px] mb-8 mx-4">
           {playerStats.map((player, index) => (
             <Card key={player.name} className="overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
@@ -122,16 +122,18 @@ export default function PlayerComparison() {
             </Card>
           ))}
         </div>
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="mx-auto">
-              Player Performance Radar Chart
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <RadarChart data={radarData} />
-          </CardContent>
-        </Card>
+        <div className="mx-4">
+          <Card className="mt-8">
+            <CardHeader>
+              <CardTitle className="mx-auto">
+                Player Performance Radar Chart
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <RadarChart data={radarData} />
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
