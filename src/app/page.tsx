@@ -45,10 +45,10 @@ export default function PlayerComparison() {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-4 overflow-x-auto">
-        <div className="grid grid-cols-2 gap-8 min-w-[640px]">
+      <div className="min-h-screen flex flex-col">
+        <div className="grid grid-cols-2 gap-8 min-w-[640px] my-12">
           {players.map((player) => (
-            <Card key={player.name} className="overflow-hidden">
+            <Card key={player.name} className="overflow-hidden mx-4">
               <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
                 <div className="flex items-center space-x-4">
                   <Avatar className="w-20 h-20 border-2 border-white">
